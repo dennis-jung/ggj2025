@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtpks5xx7tr3"]
+[gd_scene load_steps=8 format=3 uid="uid://dtpks5xx7tr3"]
 
 [ext_resource type="Texture2D" uid="uid://bfh1ggc2jrriq" path="res://scenes/sticky/sticky.png" id="1_ejckx"]
 
@@ -269,11 +269,76 @@ tracks/8/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_mnddb"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/hip/left_leg:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.260563, 0.460369]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/hip/right_leg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.166342, -0.59306]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/hip/body/right_arm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0592831, -0.298915, -0.731273]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/hip/body/left_arm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0285897, 0.292951, 0.651896]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/hip/body/head:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.205949, -0.0575959]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vnqwf"]
 _data = {
 "RESET": SubResource("Animation_m2bi7"),
 "idle": SubResource("Animation_iqtww"),
-"rest": SubResource("Animation_d50wj")
+"rest": SubResource("Animation_d50wj"),
+"walk": SubResource("Animation_mnddb")
 }
 
 [node name="Sticky" type="CharacterBody2D"]
@@ -337,6 +402,7 @@ uv = PackedVector2Array(63.2052, 164.124, 67.452, 178.919, 34.162, 283.584, 26.9
 bones = ["hip", PackedFloat32Array(0, 0, 0, 0), "hip/body", PackedFloat32Array(0, 0, 0, 0), "hip/body/head", PackedFloat32Array(0, 0, 0, 0), "hip/body/left_arm", PackedFloat32Array(0, 0, 0, 0), "hip/body/left_arm/hand", PackedFloat32Array(0, 0, 0, 0), "hip/body/right_arm", PackedFloat32Array(0, 0, 0, 0), "hip/body/right_arm/hand", PackedFloat32Array(0, 0, 0, 0), "hip/left_leg", PackedFloat32Array(0, 0, 0, 0), "hip/left_leg/Bone2D", PackedFloat32Array(0, 0, 0, 0), "hip/right_leg", PackedFloat32Array(1, 1, 1, 1), "hip/right_leg/Bone2D", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+visible = false
 position = Vector2(-63, -275)
 
 [node name="hip" type="Bone2D" parent="Skeleton2D"]
@@ -349,6 +415,7 @@ rest = Transform2D(1, 0, 0, 1, 1, -72)
 
 [node name="head" type="Bone2D" parent="Skeleton2D/hip/body"]
 position = Vector2(0, -3)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, -3)
 
 [node name="left_arm" type="Bone2D" parent="Skeleton2D/hip/body"]
@@ -359,6 +426,7 @@ position = Vector2(27, 78)
 rest = Transform2D(1, 0, 0, 1, 27, 78)
 
 [node name="right_arm" type="Bone2D" parent="Skeleton2D/hip/body"]
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="hand" type="Bone2D" parent="Skeleton2D/hip/body/right_arm"]
