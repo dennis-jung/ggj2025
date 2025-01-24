@@ -11,11 +11,8 @@ var bubble_scene = preload("res://scenes/bubble/bubble.tscn")
 var current_bubble: Bubble = null
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("create_bubble"):
-		if current_bubble == null:
-			create_bubble()
-		else:
-			current_bubble.blow(0.01)
+	if Input.is_action_just_pressed("create_bubble"):
+		create_bubble()
 	if Input.is_action_just_released("create_bubble"):
 		release_bubble()
 
@@ -44,7 +41,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func create_bubble() -> void:
-	print_debug("create_bubble")
+	if current_bubble:
+		return
 	var bubble = bubble_scene.instantiate()
 	current_bubble = bubble
 	bubble_spawn_node.add_child(bubble)
@@ -52,7 +50,5 @@ func create_bubble() -> void:
 func release_bubble() -> void:
 	if current_bubble == null:
 		return
-	current_bubble.reparent(map_bubbles_node)
 	current_bubble.release()
-	print_debug("release_bubble, energy: ", current_bubble.energy)
 	current_bubble = null

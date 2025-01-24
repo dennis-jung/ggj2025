@@ -1,17 +1,24 @@
 extends Area2D
 class_name Bubble
 
-const MAX_SIZE = 1.0
+const MAX_SCALE = 1.5
+const MAX_SCALE_DURATION = 1.0
+const MAX_HEIGHT = 400.0
 
-var size: float = 0.1
-var energy: int = 0
+var tween: Tween = null
 
-func blow(value: float) -> void:
-	if size + value < MAX_SIZE:
-		size += value
-	energy = size * 400
-	scale = Vector2(size, size)
+func _ready() -> void:
+	if tween:
+		tween.kill()
+	scale = Vector2(0.1, 0.1)
+	tween = create_tween()
+	var max_scale = Vector2(MAX_SCALE, MAX_SCALE)
+	tween.tween_property(self, "scale", max_scale, MAX_SCALE_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 
 func release() -> void:
-	var tween = create_tween()
-	tween.tween_property(self, "position", Vector2(position.x, position.y - energy), 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	if tween:
+		tween.kill()
+	reparent(get_node("/root/Game/Map/MapBubbles"))
+	var height = scale.x * MAX_HEIGHT
+	tween = create_tween()
+	tween.tween_property(self, "position", Vector2(position.x, position.y - height), 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
