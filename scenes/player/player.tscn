@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl7n3q55wlre2"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_qr108"]
+[ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="2_pfn1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o56hh"]
+atlas = ExtResource("2_pfn1j")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bni8"]
+atlas = ExtResource("2_pfn1j")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03j3"]
+atlas = ExtResource("2_pfn1j")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjcqp"]
+atlas = ExtResource("2_pfn1j")
+region = Rect2(48, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipur5"]
+atlas = ExtResource("2_pfn1j")
+region = Rect2(64, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwsjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o56hh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bni8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjcqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipur5")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snfua"]
+size = Vector2(48, 44)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(32, 622)
+script = ExtResource("1_qr108")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -32)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xwsjc")
+animation = &"walk_right"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_snfua")
+metadata/_edit_lock_ = true
+
+[node name="BubbleSpawner" type="Node2D" parent="."]
+position = Vector2(0, -45)

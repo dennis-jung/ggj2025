@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=8 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
 [ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
-[ext_resource type="Script" path="res://scenes/tileset_test/player.gd" id="3_wu5hc"]
+[ext_resource type="PackedScene" uid="uid://dl7n3q55wlre2" path="res://scenes/player/player.tscn" id="4_bs4ck"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
 texture = ExtResource("1_bi1ic")
@@ -831,57 +831,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_twn7m")
 sources/2 = SubResource("TileSetAtlasSource_xmpa4")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o56hh"]
-atlas = ExtResource("1_bi1ic")
-region = Rect2(0, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bni8"]
-atlas = ExtResource("1_bi1ic")
-region = Rect2(16, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q03j3"]
-atlas = ExtResource("1_bi1ic")
-region = Rect2(32, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mjcqp"]
-atlas = ExtResource("1_bi1ic")
-region = Rect2(48, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipur5"]
-atlas = ExtResource("1_bi1ic")
-region = Rect2(64, 192, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwsjc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o56hh")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3bni8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q03j3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mjcqp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ipur5")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_snfua"]
-size = Vector2(48, 44)
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qc4pq")
 
@@ -895,22 +844,4 @@ tile_set = SubResource("TileSet_e4lp1")
 [node name="MapBubbles" type="Node2D" parent="Map"]
 unique_name_in_owner = true
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(32, 622)
-script = ExtResource("3_wu5hc")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(0, -32)
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_xwsjc")
-animation = &"walk_right"
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -22)
-shape = SubResource("RectangleShape2D_snfua")
-metadata/_edit_lock_ = true
-
-[node name="BubbleSpawner" type="Node2D" parent="Player"]
-position = Vector2(0, -45)
+[node name="Player" parent="." instance=ExtResource("4_bs4ck")]

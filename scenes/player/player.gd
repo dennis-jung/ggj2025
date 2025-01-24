@@ -53,6 +53,6 @@ func release_bubble() -> void:
 	if current_bubble == null:
 		return
 	current_bubble.reparent(map_bubbles_node)
+	current_bubble.release()
 	print_debug("release_bubble, energy: ", current_bubble.energy)
 	current_bubble = null
-	
