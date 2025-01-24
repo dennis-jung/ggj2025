@@ -4,5 +4,5 @@ Repo for the Global Game Jam 2025 "Bubble"
 ## To Do List
 ### Bubbles
 - Change soap bubble movement from linear to ease out
-- Check feasibility of using a soap bubble shader
+- Check feasibility of using a [soap bubble shader](https://godotshaders.com/shader/soap-bubble-shader/)
  
