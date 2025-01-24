@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6lnvklwtfwed"]
+
+[ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_4mmlg"]
+[ext_resource type="Texture2D" uid="uid://e8tiqgyvcnf2" path="res://assets/img/outlineDisc.png" id="2_keac6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6ayy"]
+atlas = ExtResource("2_keac6")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgabx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6ayy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jjc7"]
+radius = 19.0263
+
+[node name="Bubble" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_4mmlg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_mgabx")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_6jjc7")
+metadata/_edit_lock_ = true
