@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://d1dag16tak0ri"]
 
-[ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="1_2ugjl"]
-[ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_xtww1"]
+[ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
+[ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
-texture = ExtResource("1_xtww1")
+texture = ExtResource("1_bi1ic")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -413,7 +413,7 @@ texture = ExtResource("1_xtww1")
 19:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmpa4"]
-texture = ExtResource("1_2ugjl")
+texture = ExtResource("2_bcycn")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
