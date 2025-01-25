@@ -889,4 +889,12 @@ offset_bottom = 68.0
 text = "Coins:0"
 label_settings = SubResource("LabelSettings_rtrv4")
 
+[node name="LabelSoap" type="Label" parent="UI"]
+offset_left = 1204.0
+offset_top = 8.0
+offset_right = 1492.0
+offset_bottom = 68.0
+text = "Soap:0"
+label_settings = SubResource("LabelSettings_rtrv4")
+
 [connection signal="body_entered" from="Map/Portal" to="." method="_on_portal_body_entered"]
