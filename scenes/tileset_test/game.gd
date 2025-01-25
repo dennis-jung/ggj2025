@@ -1,6 +1,8 @@
 extends Node2D
 
-@onready var level_spawner_node = $Level
+@onready var upstairs_spawn_point: Marker2D = $Map/UpstairsSpawnPoint
 
-func _ready() -> void:
-	Main.load_level("scenes/levels/level_001.tscn", level_spawner_node)
+func _on_portal_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		var sticky: Sticky = body
+		sticky.port(upstairs_spawn_point.position)

@@ -9,12 +9,6 @@ signal fuel_amount_changed
 @onready var coins: int = 0
 @onready var current_fuel: float = starting_fuel
 
-func load_level(level_path: String, target_node: Node2D) -> void:
-	for child in target_node.get_children():
-		child.queue_free()
-	var res = ResourceLoader.load_threaded_get(level_path)
-	var level = res.instantiate()
-	target_node.add_child(level)
 
 func is_fuel_full() -> bool:
 	return current_fuel >= max_fuel
