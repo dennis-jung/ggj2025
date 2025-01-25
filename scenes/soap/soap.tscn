@@ -11,11 +11,13 @@ collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_l3l74")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_v4v7v")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.296322, -0.0972671)
 rotation = -2.82442
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_085sf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v4v7v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
