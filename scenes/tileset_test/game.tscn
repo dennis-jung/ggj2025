@@ -1,13 +1,17 @@
-[gd_scene load_steps=14 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=20 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
 [ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
 [ext_resource type="PackedScene" uid="uid://db4bew06g5wch" path="res://scenes/soap/soap.tscn" id="2_woiq4"]
+[ext_resource type="Texture2D" uid="uid://fxhokq3votm" path="res://assets/img/b1.png" id="4_0s5c6"]
 [ext_resource type="PackedScene" uid="uid://dtpks5xx7tr3" path="res://scenes/sticky/sticky.tscn" id="4_j8351"]
+[ext_resource type="Texture2D" uid="uid://dj32gkeq6h62s" path="res://assets/img/b2.png" id="5_80j65"]
 [ext_resource type="PackedScene" uid="uid://bm0e4bse51i2y" path="res://scenes/coin/coin.tscn" id="5_wfcg5"]
+[ext_resource type="Texture2D" uid="uid://chqxs0ktvvtcg" path="res://assets/img/o1.png" id="6_32hk4"]
 [ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="6_djfp3"]
 [ext_resource type="Script" path="res://scenes/tileset_test/ui.gd" id="6_onw53"]
+[ext_resource type="Texture2D" uid="uid://cs43xrdjj0uey" path="res://assets/img/o2.png" id="7_n3j23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
 texture = ExtResource("1_bi1ic")
@@ -838,6 +842,34 @@ sources/2 = SubResource("TileSetAtlasSource_xmpa4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnihb"]
 size = Vector2(20, 120)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwqs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0s5c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_80j65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fwn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_32hk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n3j23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_rtrv4"]
 font = ExtResource("6_djfp3")
 font_size = 48
@@ -856,17 +888,30 @@ tile_set = SubResource("TileSet_e4lp1")
 [node name="MapBubbles" type="Node2D" parent="Map"]
 unique_name_in_owner = true
 
-[node name="Portal" type="Area2D" parent="Map"]
-position = Vector2(1933, 996)
+[node name="PortalDownstairs" type="Area2D" parent="Map"]
+position = Vector2(1924, 996)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Portal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/PortalDownstairs"]
 shape = SubResource("RectangleShape2D_fnihb")
 metadata/_edit_lock_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/PortalDownstairs"]
+position = Vector2(-11, 0.250004)
+scale = Vector2(1, 1.45732)
+sprite_frames = SubResource("SpriteFrames_mwqs2")
+autoplay = "default"
+frame_progress = 0.783789
+
 [node name="UpstairsSpawnPoint" type="Marker2D" parent="Map"]
-position = Vector2(19, 344)
+position = Vector2(21, 349)
+
+[node name="PortalUpstairs" type="AnimatedSprite2D" parent="Map"]
+position = Vector2(6, 291)
+scale = Vector2(1, 1.46341)
+sprite_frames = SubResource("SpriteFrames_0fwn3")
+autoplay = "default"
 
 [node name="Sticky" parent="." instance=ExtResource("4_j8351")]
 position = Vector2(126, 1051)
@@ -897,4 +942,4 @@ offset_bottom = 68.0
 text = "Soap:0"
 label_settings = SubResource("LabelSettings_rtrv4")
 
-[connection signal="body_entered" from="Map/Portal" to="." method="_on_portal_body_entered"]
+[connection signal="body_entered" from="Map/PortalDownstairs" to="." method="_on_portal_body_entered"]
