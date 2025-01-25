@@ -907,10 +907,11 @@ scale = Vector2(1, 1.46341)
 sprite_frames = SubResource("SpriteFrames_0fwn3")
 autoplay = "default"
 
-[node name="Sticky" parent="." instance=ExtResource("4_j8351")]
+[node name="Sticky" parent="Map" instance=ExtResource("4_j8351")]
 position = Vector2(126, 1051)
 collision_mask = 9
 
+<<<<<<< Updated upstream
 [node name="Coin" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(773, 596)
 
@@ -934,6 +935,19 @@ position = Vector2(1748, 405)
 
 [node name="Soap" parent="." instance=ExtResource("2_woiq4")]
 position = Vector2(1850, 769)
+=======
+[node name="Coin" parent="Map" instance=ExtResource("5_wfcg5")]
+position = Vector2(624, 947)
+
+[node name="Coin2" parent="Map" instance=ExtResource("5_wfcg5")]
+position = Vector2(315, 212)
+
+[node name="Coin3" parent="Map" instance=ExtResource("5_wfcg5")]
+position = Vector2(253, 211)
+
+[node name="Soap" parent="Map" instance=ExtResource("2_woiq4")]
+position = Vector2(819, 971)
+>>>>>>> Stashed changes
 
 [node name="UI" parent="." instance=ExtResource("11_t4aua")]
 
