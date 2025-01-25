@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=10 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
 [ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
 [ext_resource type="PackedScene" uid="uid://dtpks5xx7tr3" path="res://scenes/sticky/sticky.tscn" id="4_j8351"]
+[ext_resource type="PackedScene" uid="uid://bm0e4bse51i2y" path="res://scenes/coin/coin.tscn" id="5_wfcg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
 texture = ExtResource("1_bi1ic")
@@ -859,5 +860,10 @@ position = Vector2(21, 293)
 
 [node name="Sticky" parent="." instance=ExtResource("4_j8351")]
 position = Vector2(151, 555)
+collision_layer = 2
+collision_mask = 9
+
+[node name="Coin" parent="." instance=ExtResource("5_wfcg5")]
+position = Vector2(465, 478)
 
 [connection signal="body_entered" from="Map/Portal" to="." method="_on_portal_body_entered"]
