@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1dag16tak0ri"]
+
+[ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
+[ext_resource type="PackedScene" uid="uid://goruq5yckq5l" path="res://scenes/ui/ui.tscn" id="6_k6vwn"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_qc4pq")
+
+[node name="LevelSpawnerNode" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("6_k6vwn")]
