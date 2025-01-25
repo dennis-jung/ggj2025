@@ -21,7 +21,7 @@ func update_physics(_delta: float):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction and not parent.just_ported:
 		parent.velocity.x = direction * parent.SPEED
 	else:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, parent.SPEED)

@@ -4,4 +4,5 @@ extends Node2D
 
 func _on_portal_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.position = upstairs_spawn_point.position
+		var sticky: Sticky = body
+		sticky.port(upstairs_spawn_point.position)
