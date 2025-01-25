@@ -22,3 +22,8 @@ func release() -> void:
 	var height = scale.x * MAX_HEIGHT
 	tween = create_tween()
 	tween.tween_property(self, "position", Vector2(position.x, position.y - height), 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+
+func pop() -> void:
+	if tween:
+		tween.kill()
+	queue_free()
