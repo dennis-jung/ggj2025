@@ -9,6 +9,11 @@ signal fuel_amount_changed
 @onready var coins: int = 0
 @onready var current_fuel: float = starting_fuel
 
+
+func is_fuel_full() -> bool:
+	return current_fuel >= max_fuel
+	
+
 func on_fuel_modified(difference: float) -> void:
 	current_fuel += difference
 	if current_fuel < 0:
