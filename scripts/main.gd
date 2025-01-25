@@ -22,6 +22,6 @@ func on_fuel_modified(difference: float) -> void:
 		current_fuel = max_fuel
 	fuel_amount_changed.emit()
 	
-func on_coin_pickup() -> void:
-	coins += 1
+func on_coin_pickup(coin_value: int) -> void:
+	coins += coin_value
 	coin_count_changed.emit()

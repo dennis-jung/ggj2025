@@ -3,6 +3,7 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _inital_y_pos: float = sprite.position.y
 
+@export var coin_value: int = 10
 @export var max_displacment: float = 15.0 
 
 var tween: Tween = null
@@ -30,7 +31,7 @@ func release() -> void:
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		# add point in main
-		Main.on_coin_pickup()
+		Main.on_coin_pickup(coin_value)
 		# destroy myself
 		release()
 		
