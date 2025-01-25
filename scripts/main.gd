@@ -1,5 +1,7 @@
 extends Node
 
+signal coin_count_changed
+
 @export var max_fuel: float = 100.0
 @export var starting_fuel: float = 100.0
 
@@ -11,3 +13,4 @@ func on_fuel_modified(difference: float) -> void:
 	
 func on_coin_pickup() -> void:
 	coins += 1
+	coin_count_changed.emit()
