@@ -10,6 +10,10 @@ signal coin_count_changed
 
 func on_fuel_modified(difference: float) -> void:
 	current_fuel += difference
+	if current_fuel < 0:
+		current_fuel = 0.0
+	elif current_fuel > max_fuel:
+		current_fuel = max_fuel
 	
 func on_coin_pickup() -> void:
 	coins += 1
