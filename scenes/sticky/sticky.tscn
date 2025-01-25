@@ -427,7 +427,7 @@ libraries = {
 }
 
 [node name="BubbleSpawner" type="Marker2D" parent="."]
-position = Vector2(13, -300)
+position = Vector2(8, -115)
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state", "parent")]
 script = ExtResource("3_luuip")
