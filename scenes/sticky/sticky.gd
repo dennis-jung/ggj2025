@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -400.0
 
 var bubble_scene = preload("res://scenes/bubble/bubble.tscn")
 var current_bubble: Bubble = null
+var just_ported: bool = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("create_bubble"):
@@ -17,10 +18,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_released("create_bubble"):
 		release_bubble()
 
-func _physics_process(delta: float) -> void:
-	pass
-
-
+func port(destination: Vector2) -> void:
+	position = destination
+	just_ported = true
 
 func create_bubble() -> void:
 	if current_bubble:

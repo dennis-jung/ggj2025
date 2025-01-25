@@ -24,11 +24,15 @@ func update_physics(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction and not parent.just_ported:
 		parent.velocity.x = direction * parent.SPEED
 	else:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, parent.SPEED)
 
 	if parent.velocity.length() > 0:
 		state_transition.emit("walking", self)
+
 	parent.move_and_slide()
+
+	if not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+		parent.just_ported = false
