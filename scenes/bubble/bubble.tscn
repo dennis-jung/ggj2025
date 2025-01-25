@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6lnvklwtfwed"]
+[gd_scene load_steps=7 format=3 uid="uid://b6lnvklwtfwed"]
 
 [ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_4mmlg"]
 [ext_resource type="Texture2D" uid="uid://e8tiqgyvcnf2" path="res://assets/img/outlineDisc.png" id="2_keac6"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jjc7"]
 radius = 19.0263
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1l2l4"]
+radius = 21.0
+
 [node name="Bubble" type="StaticBody2D"]
 scale = Vector2(0.1, 0.1)
 collision_mask = 3
@@ -35,3 +38,12 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -20)
 shape = SubResource("CircleShape2D_6jjc7")
 metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_1l2l4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
