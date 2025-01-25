@@ -3,6 +3,7 @@ extends Area2D
 @export var soap_fuel: float = 15.0
 
 func _on_body_entered(body):
+	print("Hi")
 	if body.is_in_group("Player"):
 		print("Player picked me up!")
 		# add fuel in main
