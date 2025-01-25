@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsj2ignirnia2"
-path="res://.godot/imported/stickyv2.png-4c9cefa897d52262c804f1f35feb3b9b.ctex"
+path="res://.godot/imported/stickyv2.png-a935e4d4f6313582eba3d29ffe8a1bc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/stickyv2.png"
-dest_files=["res://.godot/imported/stickyv2.png-4c9cefa897d52262c804f1f35feb3b9b.ctex"]
+source_file="res://scenes/sticky/stickyv2.png"
+dest_files=["res://.godot/imported/stickyv2.png-a935e4d4f6313582eba3d29ffe8a1bc4.ctex"]
 
 [params]
 
