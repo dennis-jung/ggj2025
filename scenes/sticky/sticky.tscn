@@ -412,7 +412,7 @@ _data = {
 "walk": SubResource("Animation_mnddb")
 }
 
-[node name="Sticky" type="CharacterBody2D"]
+[node name="Sticky" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_xppfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
