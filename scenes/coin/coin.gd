@@ -10,12 +10,13 @@ var tween: Tween = null
 func _ready() -> void:
 	if tween:
 		tween.kill()
-	tween = create_tween()
-	tween = create_tween().set_loops(200) # loop the tween 2 times
+	tween = create_tween().set_loops() # loop the tween 2 times
 	tween.tween_interval(randf_range(0.0, 0.5))
-	tween.tween_property(sprite, "position:y", max_displacment, 0.2)
-	tween.tween_property(sprite, "position:y", _inital_y_pos, 1.0)
-	tween.tween_interval(1) # wait for 1 second before repeating
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "position", Vector2(0,max_displacment), 0.4).as_relative()
+	tween.tween_property(sprite, "position", Vector2(0,-max_displacment), 0.4).as_relative()
+	#tween.tween_property(sprite, "position:y", _inital_y_pos, 1.0)
+	#tween.tween_interval(0.1) # wait for 1 second before repeating
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

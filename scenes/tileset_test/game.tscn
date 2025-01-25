@@ -920,6 +920,12 @@ collision_mask = 9
 [node name="Coin" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(624, 947)
 
+[node name="Coin2" parent="." instance=ExtResource("5_wfcg5")]
+position = Vector2(315, 212)
+
+[node name="Coin3" parent="." instance=ExtResource("5_wfcg5")]
+position = Vector2(253, 211)
+
 [node name="Soap" parent="." instance=ExtResource("2_woiq4")]
 position = Vector2(819, 971)
 
