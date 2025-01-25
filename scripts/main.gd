@@ -12,7 +12,6 @@ signal fuel_amount_changed
 
 func is_fuel_full() -> bool:
 	return current_fuel >= max_fuel
-	
 
 func on_fuel_modified(difference: float) -> void:
 	current_fuel += difference
