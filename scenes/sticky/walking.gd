@@ -17,3 +17,5 @@ func update_physics(_delta: float):
 func update_state() -> void:
 	if parent.velocity.length() == 0:
 		state_transition.emit("idle", self)
+	elif parent.velocity.y > 0:
+		state_transition.emit("falling", self)

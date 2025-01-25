@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtpks5xx7tr3"]
+[gd_scene load_steps=14 format=3 uid="uid://dtpks5xx7tr3"]
 
 [ext_resource type="Texture2D" uid="uid://bfh1ggc2jrriq" path="res://scenes/sticky/sticky.png" id="1_ejckx"]
 [ext_resource type="Script" path="res://scenes/sticky/sticky.gd" id="1_xppfj"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_luuip"]
 [ext_resource type="Script" path="res://scenes/sticky/walking.gd" id="4_b1ufu"]
-[ext_resource type="Script" path="res://scripts/state.gd" id="5_yxvdq"]
+[ext_resource type="Script" path="res://scenes/sticky/idle.gd" id="5_20xhb"]
+[ext_resource type="Script" path="res://scenes/sticky/falling.gd" id="6_fu2eg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iowla"]
 radius = 28.0
@@ -526,4 +527,7 @@ parent = NodePath("..")
 script = ExtResource("4_b1ufu")
 
 [node name="idle" type="Node" parent="FSM"]
-script = ExtResource("5_yxvdq")
+script = ExtResource("5_20xhb")
+
+[node name="falling" type="Node" parent="FSM"]
+script = ExtResource("6_fu2eg")
