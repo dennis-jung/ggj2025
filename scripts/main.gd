@@ -1,5 +1,6 @@
 extends Node
 
+@export var max_fuel: float = 100.0
 @export var starting_fuel: float = 100.0
 
 @onready var coins: int = 0
