@@ -413,6 +413,8 @@ _data = {
 }
 
 [node name="Sticky" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_xppfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
