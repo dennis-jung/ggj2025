@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=13 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
 [ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
-[ext_resource type="PackedScene" uid="uid://db4bew06g5wch" path="res://scenes/soap/soap.tscn" id="2_woiq4"]
 [ext_resource type="PackedScene" uid="uid://dtpks5xx7tr3" path="res://scenes/sticky/sticky.tscn" id="4_j8351"]
 [ext_resource type="PackedScene" uid="uid://bm0e4bse51i2y" path="res://scenes/coin/coin.tscn" id="5_wfcg5"]
+[ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="6_djfp3"]
+[ext_resource type="Script" path="res://scenes/tileset_test/ui.gd" id="6_onw53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
 texture = ExtResource("1_bi1ic")
@@ -836,11 +837,13 @@ sources/2 = SubResource("TileSetAtlasSource_xmpa4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnihb"]
 size = Vector2(20, 120)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rtrv4"]
+font = ExtResource("6_djfp3")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qc4pq")
-
-[node name="Soap" parent="." instance=ExtResource("2_woiq4")]
-position = Vector2(594, 1021)
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -869,6 +872,17 @@ position = Vector2(126, 1051)
 collision_mask = 9
 
 [node name="Coin" parent="." instance=ExtResource("5_wfcg5")]
-position = Vector2(255, 205)
+position = Vector2(624, 947)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("6_onw53")
+
+[node name="LabelCoins" type="Label" parent="UI"]
+offset_left = 1596.0
+offset_top = 8.0
+offset_right = 1884.0
+offset_bottom = 68.0
+text = "Coins:0"
+label_settings = SubResource("LabelSettings_rtrv4")
 
 [connection signal="body_entered" from="Map/Portal" to="." method="_on_portal_body_entered"]
