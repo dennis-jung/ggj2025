@@ -17,7 +17,7 @@ func _ready() -> void:
 	scale = Vector2(0.1, 0.1)
 	tween = create_tween()
 	var max_scale = Vector2(MAX_SCALE, MAX_SCALE)
-	tween.tween_property(self, "scale", max_scale, MAX_SCALE_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", max_scale, MAX_SCALE_DURATION)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == bubble_body:
@@ -38,6 +38,7 @@ func release() -> void:
 	var height = scale.x * MAX_HEIGHT
 	tween = create_tween()
 	tween.tween_property(self, "position", Vector2(position.x, position.y - height), 3.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	Main.on_fuel_modified(scale.x * -10.0)
 
 func pop(now: bool = false) -> void:
 	if is_popping:
