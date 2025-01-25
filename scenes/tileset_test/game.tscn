@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
 [ext_resource type="Texture2D" uid="uid://dvxhqvonbype5" path="res://assets/img/monochrome_tilemap_packed.png" id="2_bcycn"]
-[ext_resource type="PackedScene" uid="uid://dl7n3q55wlre2" path="res://scenes/player/player.tscn" id="4_bs4ck"]
+[ext_resource type="PackedScene" uid="uid://dtpks5xx7tr3" path="res://scenes/sticky/sticky.tscn" id="4_j8351"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twn7m"]
 texture = ExtResource("1_bi1ic")
@@ -844,4 +844,5 @@ tile_set = SubResource("TileSet_e4lp1")
 [node name="MapBubbles" type="Node2D" parent="Map"]
 unique_name_in_owner = true
 
-[node name="Player" parent="." instance=ExtResource("4_bs4ck")]
+[node name="Sticky" parent="." instance=ExtResource("4_j8351")]
+position = Vector2(151, 555)
