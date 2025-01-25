@@ -9,7 +9,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iowla"]
 radius = 13.0
-height = 84.0
+height = 72.0
 
 [sub_resource type="Animation" id="Animation_m2bi7"]
 length = 0.001
@@ -341,6 +341,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_mnddb"]
 resource_name = "walk"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -349,10 +350,10 @@ tracks/0/path = NodePath("polygons/Skeleton2D/hip/left_leg:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.260563, 0.460369]
+"values": [-0.262798, 0.460369]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -361,10 +362,10 @@ tracks/1/path = NodePath("polygons/Skeleton2D/hip/right_leg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -0.166342, -0.59306]
+"values": [0.313876, -0.59306]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -373,10 +374,10 @@ tracks/2/path = NodePath("polygons/Skeleton2D/hip/body/right_arm:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.0592831, -0.298915, -0.731273]
+"values": [0.333623, -0.731273]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -385,10 +386,10 @@ tracks/3/path = NodePath("polygons/Skeleton2D/hip/body/left_arm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0285897, 0.292951, 0.651896]
+"values": [-0.266174, 0.651896]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -397,7 +398,7 @@ tracks/4/path = NodePath("polygons/Skeleton2D/hip/body/head:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.205949, -0.0575959]
@@ -418,7 +419,7 @@ collision_mask = 21
 script = ExtResource("1_xppfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, -44)
+position = Vector2(8, -37)
 shape = SubResource("CapsuleShape2D_iowla")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -507,6 +508,7 @@ position = Vector2(0, -3)
 rest = Transform2D(1, 0, 0, 1, 0, -3)
 
 [node name="left_arm" type="Bone2D" parent="polygons/Skeleton2D/hip/body"]
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="hand" type="Bone2D" parent="polygons/Skeleton2D/hip/body/left_arm"]
