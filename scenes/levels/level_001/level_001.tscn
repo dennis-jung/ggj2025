@@ -921,6 +921,7 @@ metadata/_edit_lock_ = true
 position = Vector2(55, 1055)
 
 [node name="UI" parent="." instance=ExtResource("9_clx64")]
+visible = false
 
 [connection signal="body_entered" from="PortalDownstairs" to="." method="_on_portal_downstairs_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
