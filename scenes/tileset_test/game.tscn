@@ -889,6 +889,9 @@ modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(960, 540)
 texture = ExtResource("2_42hch")
 
+[node name="Signpost4" parent="." instance=ExtResource("17_atslm")]
+position = Vector2(275, 1057)
+
 [node name="Signpost" parent="." instance=ExtResource("9_pivur")]
 position = Vector2(1780, 1057)
 
@@ -1001,9 +1004,6 @@ metadata/_edit_lock_ = true
 position = Vector2(-16, 887)
 
 [node name="UI" parent="." instance=ExtResource("11_t4aua")]
-
-[node name="Signpost4" parent="." instance=ExtResource("17_atslm")]
-position = Vector2(275, 1057)
 
 [connection signal="body_entered" from="Map/PortalDownstairs" to="." method="_on_portal_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
