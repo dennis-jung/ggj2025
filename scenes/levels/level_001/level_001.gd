@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var upstairs_spawn_point: Marker2D = $Map/UpstairsSpawnPoint
+@onready var upstairs_spawn_point: Marker2D = $UpstairsSpawnPoint
 
 
 func _on_portal_downstairs_body_entered(body: Node2D) -> void:
