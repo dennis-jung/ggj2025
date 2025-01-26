@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtpks5xx7tr3"]
+[gd_scene load_steps=17 format=3 uid="uid://dtpks5xx7tr3"]
 
 [ext_resource type="Script" path="res://scenes/sticky/sticky.gd" id="1_xppfj"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_luuip"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/sticky/idle.gd" id="5_20xhb"]
 [ext_resource type="Texture2D" uid="uid://dsj2ignirnia2" path="res://scenes/sticky/stickyv2.png" id="6_ey2hv"]
 [ext_resource type="Script" path="res://scenes/sticky/falling.gd" id="6_fu2eg"]
+[ext_resource type="Script" path="res://scenes/sticky/jumping.gd" id="6_pd613"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iowla"]
 radius = 13.0
@@ -116,6 +117,30 @@ tracks/8/path = NodePath("polygons/Skeleton2D/hip/right_leg/Bone2D:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("polygons/Skeleton2D/hip/body:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("polygons/Skeleton2D/hip:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -404,11 +429,179 @@ tracks/4/keys = {
 "values": [-0.205949, -0.0575959]
 }
 
+[sub_resource type="Animation" id="Animation_d746e"]
+resource_name = "jumping_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("polygons/Skeleton2D/hip/body/left_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-3.6134, -3.19713]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("polygons/Skeleton2D/hip/body/right_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.934927, 1.44285]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("polygons/Skeleton2D/hip/left_leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.00655305, -0.343846]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("polygons/Skeleton2D/hip/right_leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.349117]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("polygons/Skeleton2D/hip/body:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.321904, 0.398443]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("polygons/Skeleton2D/hip:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.748481, -0.843811]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("polygons/Skeleton2D/hip/body/head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.393362]
+}
+
+[sub_resource type="Animation" id="Animation_r2mq1"]
+resource_name = "jumping_right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("polygons/Skeleton2D/hip/body/left_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.05628, -0.588741]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("polygons/Skeleton2D/hip/body/right_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.74048, -2.51275]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("polygons/Skeleton2D/hip/left_leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.817968, 1.11878]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("polygons/Skeleton2D/hip/right_leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.187833, 0.137395]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("polygons/Skeleton2D/hip/body:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.355805]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("polygons/Skeleton2D/hip:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.532214]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vnqwf"]
 _data = {
 "RESET": SubResource("Animation_m2bi7"),
 "falling": SubResource("Animation_g77gq"),
 "idle": SubResource("Animation_iqtww"),
+"jumping_left": SubResource("Animation_d746e"),
+"jumping_right": SubResource("Animation_r2mq1"),
 "rest": SubResource("Animation_d50wj"),
 "walk": SubResource("Animation_mnddb")
 }
@@ -443,6 +636,9 @@ script = ExtResource("5_20xhb")
 
 [node name="falling" type="Node" parent="FSM"]
 script = ExtResource("6_fu2eg")
+
+[node name="jumping" type="Node" parent="FSM"]
+script = ExtResource("6_pd613")
 
 [node name="polygons" type="Node2D" parent="."]
 position = Vector2(-13, -89)
@@ -508,6 +704,7 @@ position = Vector2(0, -3)
 rest = Transform2D(1, 0, 0, 1, 0, -3)
 
 [node name="left_arm" type="Bone2D" parent="polygons/Skeleton2D/hip/body"]
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="hand" type="Bone2D" parent="polygons/Skeleton2D/hip/body/left_arm"]
@@ -515,6 +712,7 @@ position = Vector2(15, 21)
 rest = Transform2D(1, 0, 0, 1, 15, 21)
 
 [node name="right_arm" type="Bone2D" parent="polygons/Skeleton2D/hip/body"]
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="hand" type="Bone2D" parent="polygons/Skeleton2D/hip/body/right_arm"]
@@ -522,6 +720,7 @@ position = Vector2(-14, 21)
 rest = Transform2D(1, 0, 0, 1, -14, 21)
 
 [node name="left_leg" type="Bone2D" parent="polygons/Skeleton2D/hip"]
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Bone2D" type="Bone2D" parent="polygons/Skeleton2D/hip/left_leg"]
@@ -529,6 +728,7 @@ position = Vector2(11, 36)
 rest = Transform2D(1, 0, 0, 1, 11, 36)
 
 [node name="right_leg" type="Bone2D" parent="polygons/Skeleton2D/hip"]
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Bone2D" type="Bone2D" parent="polygons/Skeleton2D/hip/right_leg"]

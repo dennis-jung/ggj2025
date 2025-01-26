@@ -35,3 +35,5 @@ func update_state() -> void:
 		state_transition.emit("idle", self)
 	elif parent.velocity.y > 0:
 		state_transition.emit("falling", self)
+	elif parent.velocity.y < 0:
+		state_transition.emit("jumping", self)
