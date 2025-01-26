@@ -508,7 +508,6 @@ position = Vector2(0, -3)
 rest = Transform2D(1, 0, 0, 1, 0, -3)
 
 [node name="left_arm" type="Bone2D" parent="polygons/Skeleton2D/hip/body"]
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="hand" type="Bone2D" parent="polygons/Skeleton2D/hip/body/left_arm"]
