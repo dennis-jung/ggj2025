@@ -16,6 +16,8 @@ const levels = [
 
 var current_level = 0
 
+var deaths: int = 0
+var currently_dead = false
 
 func _ready() -> void:
 	change_level(0)
@@ -64,3 +66,10 @@ func on_fuel_modified(difference: float) -> void:
 func on_coin_pickup(coin_value: int) -> void:
 	coins += coin_value
 	coin_count_changed.emit()
+
+func on_death() -> void:
+	deaths += 1
+	currently_dead = true
+
+func respawned() -> void:
+	currently_dead = false
