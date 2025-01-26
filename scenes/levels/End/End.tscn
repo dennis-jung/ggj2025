@@ -55,6 +55,19 @@ grow_horizontal = 2
 text = "COINS: 0"
 label_settings = SubResource("LabelSettings_2m1ab")
 
+[node name="LabelDeaths" type="Label" parent="UI"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -704.0
+offset_top = 616.0
+offset_right = -355.0
+offset_bottom = 680.0
+grow_horizontal = 2
+text = "DEATHS: 0"
+label_settings = SubResource("LabelSettings_2m1ab")
+
 [node name="LabelText0" type="Label" parent="UI"]
 offset_left = 1100.0
 offset_top = 970.0
