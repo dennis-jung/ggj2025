@@ -12,7 +12,11 @@ func enter() -> void:
 	
 func exit() -> void:
 	print_debug("Death exited")
+	anim.play("RESET")
+	anim.advance(0)
 	Main.respawned()
 	
 func update_physics(_delta: float):
 	parent.move_and_slide()
+	if not parent.is_on_floor():
+		parent.velocity += parent.get_gravity() * _delta
