@@ -8,6 +8,7 @@ const COINS_PER_DEATH = 50
 @onready var bubble_sprite: Sprite2D = $BubbleSprite
 @onready var label_coins: Label = $UI/LabelCoins
 @onready var label_deaths: Label = $UI/LabelDeaths
+@onready var label_text_0: Label = $UI/LabelText0
 @onready var label_text_025: Label = $UI/LabelText025
 @onready var label_text_050: Label = $UI/LabelText050
 @onready var label_text_075: Label = $UI/LabelText075
@@ -24,6 +25,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	label_coins.text = "Coins: " + str(coin_display)
 	label_deaths.text = "Deaths: " + str(deaths_display)
+	if coin_display == 0:
+		label_text_0.text = "REALLY? ZERO?"
+	if coin_display > 0:
+		label_text_0.text = "PATHETIC!"
+	if coin_display < 0:
+		label_text_0.text = "OMG, SHAMEFUL!!!"
 	label_text_025.visible = coin_display >= MAX_COINS * 0.25
 	label_text_050.visible = coin_display >= MAX_COINS * 0.5
 	label_text_075.visible = coin_display >= MAX_COINS * 0.75
