@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cksmknwfcoqd2"]
+[gd_scene load_steps=5 format=3 uid="uid://hgd8l1cwyoqc"]
 
-[ext_resource type="Texture2D" uid="uid://c1vh6q72fa3eu" path="res://assets/img/hint_empty.png" id="1_e7e83"]
-[ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="2_0wx3t"]
+[ext_resource type="Texture2D" uid="uid://c1vh6q72fa3eu" path="res://assets/img/hint_empty.png" id="1_ba16s"]
+[ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="2_cee01"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dnm2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7lcsx"]
 
 [node name="Signpost" type="Node2D"]
+position = Vector2(2, 4)
+rotation = -0.554157
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4, -48)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_e7e83")
+texture = ExtResource("1_ba16s")
 
 [node name="Control" type="Control" parent="Sprite2D"]
 layout_mode = 3
@@ -24,16 +26,19 @@ offset_bottom = 7.0
 
 [node name="Label" type="Label" parent="Sprite2D/Control"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 52.0
-offset_bottom = 47.0
+layout_mode = 0
+offset_left = 2.70783
+offset_top = 1.77696
+offset_right = 74.7078
+offset_bottom = 44.777
+scale = Vector2(0.63, 0.63)
 theme_type_variation = &"HeaderLarge"
-theme_override_fonts/font = ExtResource("2_0wx3t")
-theme_override_font_sizes/font_size = 4
+theme_override_fonts/font = ExtResource("2_cee01")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3dnm2")
 text = "Place 
 bubbles"
 label_settings = SubResource("LabelSettings_7lcsx")
-clip_text = true
+horizontal_alignment = 3
+vertical_alignment = 3
 uppercase = true
