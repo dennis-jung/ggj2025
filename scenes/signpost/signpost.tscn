@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://k85rjkma410t"]
+
+[ext_resource type="Texture2D" uid="uid://b3ii43isdrgmq" path="res://assets/img/hint.png" id="1_a4qoo"]
+
+[node name="Signpost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_a4qoo")
