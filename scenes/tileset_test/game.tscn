@@ -914,24 +914,38 @@ collision_mask = 9
 
 [node name="Coin" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(773, 596)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin2" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1098, 517)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin3" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1398, 727)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin4" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1468, 726)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin5" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1426, 472)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin6" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1829, 400)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Coin7" parent="." instance=ExtResource("5_wfcg5")]
 position = Vector2(1748, 405)
+coin_value = 10
+max_displacment = 15.0
 
 [node name="Soap" parent="." instance=ExtResource("2_woiq4")]
 position = Vector2(1850, 769)

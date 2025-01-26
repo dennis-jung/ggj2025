@@ -65,6 +65,6 @@ func change_state(new_state_name: String, old_state: State = _current_state):
 	if _current_state:
 		_current_state.exit()
 	
-	#print_debug("New state: " + new_state.name)
+	print_debug("New state: " + new_state.name)
 	_current_state = new_state
 	new_state.enter()

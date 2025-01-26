@@ -36,3 +36,6 @@ func release_bubble() -> void:
 		return
 	current_bubble.release()
 	current_bubble = null
+
+func respawn() -> void:
+	pass
