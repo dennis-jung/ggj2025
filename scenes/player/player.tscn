@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7n3q55wlre2"]
+[gd_scene load_steps=11 format=3 uid="uid://dl7n3q55wlre2"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_qr108"]
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="2_pfn1j"]
+[ext_resource type="AudioStream" uid="uid://ph7jmg0dxloj" path="res://assets/mp3/wilhelm scream.mp3" id="3_lo2hw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o56hh"]
 atlas = ExtResource("2_pfn1j")
@@ -73,3 +74,6 @@ metadata/_edit_lock_ = true
 
 [node name="BubbleSpawner" type="Node2D" parent="."]
 position = Vector2(0, -45)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lo2hw")

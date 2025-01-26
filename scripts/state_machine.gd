@@ -53,9 +53,9 @@ func change_state(new_state_name: String, old_state: State = _current_state):
 		printerr("Invalid change_state trying from: " + old_state.name + " but currently in: " + _current_state.name)
 		return
 		
-	if _current_state && _current_state.name.to_lower() == "death":
-		printerr("Invalid change_state. No coming back from death")
-		return
+	#if _current_state && _current_state.name.to_lower() == "death":
+		#printerr("Invalid change_state. No coming back from death")
+		#return
 	
 	var new_state:State = _states.get(new_state_name.to_lower())
 	if !new_state:
@@ -65,6 +65,6 @@ func change_state(new_state_name: String, old_state: State = _current_state):
 	if _current_state:
 		_current_state.exit()
 	
-	print_debug("New state: " + new_state.name)
+	#print_debug("New state: " + new_state.name)
 	_current_state = new_state
 	new_state.enter()

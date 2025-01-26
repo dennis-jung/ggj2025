@@ -1,15 +1,18 @@
 extends State
 class_name falling_state
 
+
 func enter() -> void:
 	anim.play("falling")
-	pass
 
 func exit() -> void:
-	pass
-	
+	anim.stop()
+
+
 func update(_delta: float) -> void:
-	pass
+	if Main.currently_dead:
+		state_transition.emit("death", self)
+		
 
 func update_physics(_delta: float) -> void:
 	# Add the gravity.

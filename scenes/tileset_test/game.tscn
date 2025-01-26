@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=20 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://chqxs0ktvvtcg" path="res://assets/img/o1.png" id="6_32hk4"]
 [ext_resource type="Texture2D" uid="uid://cs43xrdjj0uey" path="res://assets/img/o2.png" id="7_n3j23"]
 [ext_resource type="PackedScene" uid="uid://dnqvnqkf11bu3" path="res://scenes/ui/ui.tscn" id="11_t4aua"]
+[ext_resource type="PackedScene" uid="uid://bqfrdcpd7nv0e" path="res://scenes/misc/Falling Death.tscn" id="12_nbtq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq5k2"]
 texture = ExtResource("1_bi1ic")
@@ -935,6 +936,7 @@ position = Vector2(1748, 405)
 position = Vector2(1850, 769)
 
 [node name="UI" parent="." instance=ExtResource("11_t4aua")]
+visible = false
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(328, 976)
@@ -946,6 +948,9 @@ shape = SubResource("RectangleShape2D_plu2h")
 metadata/_edit_lock_ = true
 
 [node name="MapBubbles" type="Node2D" parent="."]
+
+[node name="FallingDeath" parent="." instance=ExtResource("12_nbtq8")]
+position = Vector2(-16, 917)
 
 [connection signal="body_entered" from="Map/PortalDownstairs" to="." method="_on_portal_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
