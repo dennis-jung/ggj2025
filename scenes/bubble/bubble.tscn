@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6lnvklwtfwed"]
 
 [ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_4mmlg"]
-[ext_resource type="Texture2D" uid="uid://3h5uktfhy3qp" path="res://assets/img/bubble_4_grayscale.png" id="2_lmmm2"]
+[ext_resource type="Texture2D" uid="uid://bbn2ssknmp78a" path="res://assets/img/bubble_black_white.png" id="2_88ic6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mgabx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3oqm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lmmm2")
+"texture": ExtResource("2_88ic6")
 }],
 "loop": true,
 "name": &"default",
@@ -25,10 +25,9 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_4mmlg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.879205, 0.000618961, 0.879199, 1)
 position = Vector2(0, -20)
 scale = Vector2(1.265, 1.265)
-sprite_frames = SubResource("SpriteFrames_mgabx")
+sprite_frames = SubResource("SpriteFrames_e3oqm")
 metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -37,11 +36,13 @@ collision_mask = 19
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, -20)
 shape = SubResource("CircleShape2D_1l2l4")
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -20)
