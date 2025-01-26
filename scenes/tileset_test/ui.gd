@@ -22,11 +22,6 @@ func _process(_delta: float) -> void:
 	labelSoap.text = "Soap:" + str(int(soap_display))
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
-
-
 func on_coin_count_changed() -> void:
 	if tween:
 		tween.kill()

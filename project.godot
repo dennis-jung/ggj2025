@@ -63,6 +63,7 @@ create_bubble={
 2d_physics/layer_3="Portal"
 2d_physics/layer_4="Pickups"
 2d_physics/layer_5="Bubbles"
+2d_physics/layer_6="Exit"
 
 [rendering]
 
