@@ -23,6 +23,8 @@ func port(destination: Vector2) -> void:
 	just_ported = true
 
 func create_bubble() -> void:
+	if Main.current_fuel <= 0:
+		return
 	if current_bubble:
 		return
 	var bubble = bubble_scene.instantiate()
