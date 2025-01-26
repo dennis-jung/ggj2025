@@ -38,8 +38,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func start_bubble() -> void:
-	Main.coins = 400
-	Main.deaths = 10
+	#Main.coins = 400
+	#Main.deaths = 10
 	var coins = clamp(Main.coins, 0, MAX_COINS)
 	var target_pos_y = BUBBLE_Y_POS_MIN - (BUBBLE_Y_POS_MIN - BUBBLE_Y_POS_MAX) * (coins / MAX_COINS)
 	var target_pos = Vector2(bubble_sprite.position.x, target_pos_y)

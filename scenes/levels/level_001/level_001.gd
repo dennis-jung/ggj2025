@@ -12,3 +12,7 @@ func _on_portal_downstairs_body_entered(body: Node2D) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	Main.next_level()
+
+
+func _on_leave_in_shame_body_entered(body: Node2D) -> void:
+	Main.leave_in_shame()

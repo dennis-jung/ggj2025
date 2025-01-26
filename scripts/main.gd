@@ -44,6 +44,10 @@ func on_fade_out_finished() -> void:
 	change_level(current_level)
 
 
+func leave_in_shame() -> void:
+	change_level(levels.size() - 1)
+
+
 func change_level(index) -> void:
 	get_tree().change_scene_to_packed(levels[index])
 
