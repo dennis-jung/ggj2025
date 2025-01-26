@@ -2,7 +2,7 @@ extends Node2D
 
 const BUBBLE_Y_POS_MIN = 1000
 const BUBBLE_Y_POS_MAX = 300
-const MAX_COINS = 1000.0
+const MAX_COINS = 200.0
 const COINS_PER_DEATH = 50
 
 @onready var bubble_sprite: Sprite2D = $BubbleSprite
