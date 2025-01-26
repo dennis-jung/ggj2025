@@ -4,8 +4,10 @@ signal coin_count_changed
 signal fuel_amount_changed
 
 const levels = [
+	preload("res://scenes/levels/start/start.tscn"),
 	preload("res://scenes/tileset_test/game.tscn"),
-	preload("res://scenes/levels/level_001/level_001.tscn")
+	preload("res://scenes/levels/level_001/level_001.tscn"),
+	preload("res://scenes/levels/End/End.tscn")
 ]
 
 @export var max_fuel: float = 100.0
@@ -19,10 +21,6 @@ var current_level = 0
 var deaths: int = 0
 var currently_dead = false
 
-func _ready() -> void:
-	change_level(0)
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
@@ -32,8 +30,8 @@ func next_level() -> void:
 	current_level += 1
 	if current_level >= levels.size():
 		current_level = 0
-		# TODO: Win!!!
-		return
+		current_fuel = starting_fuel
+		coins = 0
 	var ui_node = get_node("/root/Level/UI")
 	if ui_node and ui_node.has_method("fade_out"):
 		ui_node.fade_out_finished.connect(on_fade_out_finished)

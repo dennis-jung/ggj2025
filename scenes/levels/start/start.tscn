@@ -1,10 +1,41 @@
-[gd_scene format=3 uid="uid://db0d542ptheps"]
+[gd_scene load_steps=6 format=3 uid="uid://db0d542ptheps"]
+
+[ext_resource type="Texture2D" uid="uid://b82lp8vwi2jus" path="res://assets/img/bg2.jpg" id="1_f2i26"]
+[ext_resource type="Script" path="res://scenes/levels/start/start.gd" id="1_mmuhc"]
+[ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="2_ukh3u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r7on5"]
+font = ExtResource("2_ukh3u")
+font_size = 250
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvpd4"]
+font = ExtResource("2_ukh3u")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [node name="Start" type="Node2D"]
+script = ExtResource("1_mmuhc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -7.0
-offset_top = -9.0
-offset_right = 1932.0
-offset_bottom = 1091.0
-color = Color(0, 0, 0, 1)
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_f2i26")
+metadata/_edit_lock_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LabelTitle" type="Label" parent="UI"]
+offset_left = 279.0
+offset_top = 153.0
+offset_right = 1779.0
+offset_bottom = 466.0
+text = "POP-HOP!"
+label_settings = SubResource("LabelSettings_r7on5")
+
+[node name="LabelPressKey" type="Label" parent="UI"]
+offset_left = 534.0
+offset_top = 755.0
+offset_right = 1472.0
+offset_bottom = 818.0
+text = "PRESS ANY KEY TO START..."
+label_settings = SubResource("LabelSettings_cvpd4")
