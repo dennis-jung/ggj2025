@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ulw3k4y5hix4"]
+
+[ext_resource type="Texture2D" uid="uid://c1vh6q72fa3eu" path="res://assets/img/hint_empty.png" id="1_7f63q"]
+[ext_resource type="FontFile" uid="uid://bry606wi80okf" path="res://assets/img/Kenney Mini Square Mono.ttf" id="2_n50c1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dnm2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7lcsx"]
+
+[node name="Signpost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -48)
+scale = Vector2(-1.5, 1.5)
+texture = ExtResource("1_7f63q")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.0
+offset_top = -79.0
+offset_right = 45.0
+offset_bottom = -38.0
+scale = Vector2(1.48, 1.48)
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 7.43243
+offset_top = -1.35135
+offset_right = 91.4324
+offset_bottom = 41.6487
+scale = Vector2(0.63, 0.63)
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("2_n50c1")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3dnm2")
+text = "Give up
+  :-("
+label_settings = SubResource("LabelSettings_7lcsx")
+horizontal_alignment = 3
+vertical_alignment = 3
+uppercase = true

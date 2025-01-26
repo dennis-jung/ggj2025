@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d1dag16tak0ri"]
+[gd_scene load_steps=26 format=4 uid="uid://d1dag16tak0ri"]
 
 [ext_resource type="Texture2D" uid="uid://b5hvmgovyiqbg" path="res://assets/img/monochrome_tilemap_transparent_packed.png" id="1_bi1ic"]
 [ext_resource type="Script" path="res://scenes/tileset_test/game.gd" id="1_qc4pq"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cksmknwfcoqd2" path="res://scenes/signpost/sp_hint_next_level.tscn" id="11_haxck"]
 [ext_resource type="PackedScene" uid="uid://dnqvnqkf11bu3" path="res://scenes/ui/ui.tscn" id="11_t4aua"]
 [ext_resource type="PackedScene" uid="uid://bqfrdcpd7nv0e" path="res://scenes/misc/Falling Death.tscn" id="12_nbtq8"]
+[ext_resource type="PackedScene" uid="uid://ulw3k4y5hix4" path="res://scenes/signpost/sp_end_game.tscn" id="17_atslm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq5k2"]
 texture = ExtResource("1_bi1ic")
@@ -892,7 +893,7 @@ texture = ExtResource("2_42hch")
 position = Vector2(1780, 1057)
 
 [node name="Signpost2" parent="." instance=ExtResource("10_0elfv")]
-position = Vector2(282, 1065)
+position = Vector2(565, 1059)
 
 [node name="Signpost3" parent="." instance=ExtResource("11_haxck")]
 position = Vector2(1799, 798)
@@ -1000,6 +1001,9 @@ metadata/_edit_lock_ = true
 position = Vector2(-16, 887)
 
 [node name="UI" parent="." instance=ExtResource("11_t4aua")]
+
+[node name="Signpost4" parent="." instance=ExtResource("17_atslm")]
+position = Vector2(275, 1057)
 
 [connection signal="body_entered" from="Map/PortalDownstairs" to="." method="_on_portal_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
