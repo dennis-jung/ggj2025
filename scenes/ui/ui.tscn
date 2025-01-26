@@ -34,3 +34,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Soap:0"
 label_settings = SubResource("LabelSettings_rtrv4")
+
+[node name="Fader" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 1937.0
+offset_bottom = 1095.0
+color = Color(0, 0, 0, 1)

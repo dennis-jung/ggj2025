@@ -17,6 +17,10 @@ const levels = [
 var current_level = 0
 
 
+func _ready() -> void:
+	change_level(0)
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
@@ -28,8 +32,21 @@ func next_level() -> void:
 		current_level = 0
 		# TODO: Win!!!
 		return
-	get_tree().change_scene_to_packed(levels[current_level])
-	
+	var ui_node = get_node("/root/Level/UI")
+	if ui_node and ui_node.has_method("fade_out"):
+		ui_node.fade_out_finished.connect(on_fade_out_finished)
+		ui_node.fade_out()
+	else:
+		change_level(current_level)	
+
+
+func on_fade_out_finished() -> void:
+	change_level(current_level)
+
+
+func change_level(index) -> void:
+	get_tree().change_scene_to_packed(levels[index])
+
 
 func is_fuel_full() -> bool:
 	return current_fuel >= max_fuel

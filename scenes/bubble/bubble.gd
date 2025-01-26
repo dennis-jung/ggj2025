@@ -38,7 +38,7 @@ func release() -> void:
 	if is_popping:
 		return
 	kill_tweens()
-	reparent(get_node("/root/Game/Map/MapBubbles"))
+	reparent(get_node("/root/Level/MapBubbles"))
 	var height = scale.x * MAX_HEIGHT
 	tween = create_tween()
 	tween.tween_property(self, "position", Vector2(position.x, position.y - height), 3.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
