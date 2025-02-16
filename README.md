@@ -4,6 +4,8 @@ Repo for the Global Game Jam 2025 game developed from 2025-01-24 to 2025-01-26
 Theme is ...
 
 > Bubble
+> 
+![GGJ Theme](/assets/ggj/ggj25_theme.PNG)
 
 ## Engine
 
